@@ -1,0 +1,43 @@
+
+import { Link } from 'react-router-dom'
+import './style.css'
+import { FaUserCircle } from "react-icons/fa";
+import NadCarros from '../../assets/logo/NadCarros.png';
+
+export function Header() {
+  const signed = true;
+  const loadingAuth = false;
+
+
+  return (
+    <div className='w-full flex items-center bg-white h-16 drop-shadow justify-center'>
+      <header className='flex w-full items-center justify-between max-w-300 px-4 mx-auto'>
+        <Link to={'/'}>
+          <img className='w-40' src={NadCarros}></img>
+        </Link>
+
+
+        {!loadingAuth && signed && (
+          <Link to={'/dashboard'}>
+            <FaUserCircle size={30} color='black'>
+            </FaUserCircle>
+          </Link>
+        )}
+
+        {!loadingAuth && !signed && (
+          <Link to={'/login'}>
+            <button>Entrar</button>
+          </Link>
+        )}
+
+      
+        
+
+      </header>
+      
+      
+    </div>
+  );
+}
+
+

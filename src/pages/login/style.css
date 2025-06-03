@@ -1,0 +1,41 @@
+
+
+.main{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    height: 100vh;
+    flex-direction: column;
+
+}
+
+img{
+    width: 200px;
+    margin: 15px auto;
+}
+
+form{
+    width: 50%;
+    padding: 8px;
+}
+
+button{
+    margin-top: 5px;
+    width: 100%;
+}
+
+.input{
+    margin: 5px 0;
+}
+
+p{
+    margin-top: 15px;
+    color:black;
+}
+
+
+
+strong{
+    color:  #f1830e;
+}
