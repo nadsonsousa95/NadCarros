@@ -2,11 +2,13 @@
 import NadCarros from '../../assets/logo/NadCarros.png';
 import './style.css'
 import { Container } from '../../components/container';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Input } from '../../components/input';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { auth } from '../../services/firebaseConnection'
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 // Validação de formulário
 const schema = z.object({
@@ -18,14 +20,27 @@ const schema = z.object({
 type formData = z.infer<typeof schema>
 
 export function Login() {
+  const navigate = useNavigate();
+
   const { register, handleSubmit, formState: { errors } } = useForm<formData>({
   resolver: zodResolver(schema),
   mode: 'onChange'
 })
 
   function onSubmit(data: formData){
-    console.log(data)
-  }
+    signInWithEmailAndPassword(auth, data.email, data.password)
+    .then((user)=> {
+      console.log('Usuário logado com sucesso!')
+      console.log(user);
+
+      navigate("/", {replace: true})
+
+    })
+    .catch((error)=>{
+      console.log(error);
+      console.log('Erro ao logar!')
+    })
+    }
 
   return (
     <Container>
@@ -54,8 +69,6 @@ export function Login() {
             register = {register}
             />
           </div>
-
-         
 
           <button type='submit'>Acessar</button>
         </form>
