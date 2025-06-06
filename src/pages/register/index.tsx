@@ -2,11 +2,14 @@
 import NadCarros from '../../assets/logo/NadCarros.png';
 import './../login/style.css'
 import { Container } from '../../components/container';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Input } from '../../components/input';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+
+import { auth } from './../../services/firebaseConnection'
+import { createUserWithEmailAndPassword, updateProfile  } from 'firebase/auth'
 
 // Validação de formulário
 const schema = z.object({
@@ -19,13 +22,27 @@ const schema = z.object({
 type formData = z.infer<typeof schema>
 
 export function Register() {
+  const navigate = useNavigate()
+
+
   const { register, handleSubmit, formState: { errors } } = useForm<formData>({
   resolver: zodResolver(schema),
   mode: 'onChange'
 })
 
-  function onSubmit(data: formData){
-    console.log(data)
+  async function onSubmit(data: formData){
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+    .then( async ( user )=>{
+      await updateProfile(user.user, {
+        displayName: data.name
+      })
+
+      console.log('Usuário cadastrado com sucesso!');
+      navigate("/dashboard", {replace: true})
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
   }
 
   return (
@@ -67,7 +84,7 @@ export function Register() {
 
          
 
-          <button type='submit'>Acessar</button>
+          <button type='submit'>Cadastrar</button>
         </form>
 
         <Link to='/login' >
