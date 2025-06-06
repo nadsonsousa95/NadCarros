@@ -1,4 +1,4 @@
-
+import { useEffect } from 'react'
 import NadCarros from '../../assets/logo/NadCarros.png';
 import './style.css'
 import { Container } from '../../components/container';
@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { auth } from '../../services/firebaseConnection'
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 // Validação de formulário
 const schema = z.object({
@@ -21,11 +21,18 @@ type formData = z.infer<typeof schema>
 
 export function Login() {
   const navigate = useNavigate();
-
   const { register, handleSubmit, formState: { errors } } = useForm<formData>({
   resolver: zodResolver(schema),
   mode: 'onChange'
 })
+
+  useEffect(()=>{
+    async function handleLogout(){
+      await signOut(auth)
+    }
+
+    handleLogout()
+  }, [])
 
   function onSubmit(data: formData){
     signInWithEmailAndPassword(auth, data.email, data.password)
