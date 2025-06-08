@@ -35,11 +35,13 @@ function AuthProvider({children}: IAuthProviderProps){
                     email : user?.email
                 })
                 setLoadingAuth(false)
+                console.log('AuthContext - Usuário logado:');
             }
             else{
                 //nao tem usuario logado
                 setUser(null)
                 setLoadingAuth(false)
+                console.log('AuthContext - Nenhum usuário logado');
             }
         })
         return()=>{

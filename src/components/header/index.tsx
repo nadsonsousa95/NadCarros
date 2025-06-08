@@ -1,13 +1,12 @@
-
+import {useContext} from 'react'
+import {AuthContext} from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 import './style.css'
 import { FaUserCircle } from "react-icons/fa";
 import NadCarros from '../../assets/logo/NadCarros.png';
 
 export function Header() {
-  const signed = true;
-  const loadingAuth = false;
-
+  const {signed, loadingAuth} = useContext(AuthContext)
 
   return (
     <div className='w-full flex items-center bg-white h-16 drop-shadow justify-center'>

@@ -9,6 +9,7 @@ import {CarDetail} from './pages/car'
 import { NewCar } from './pages/dashboard/new'
 
 import {Layout} from './components/layout'
+import {Private} from './routes/Privates'
 
 
 function App() {
@@ -17,9 +18,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/car:id" element={<CarDetail />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/new" element={<NewCar />} />
+          <Route path="/car/:id" element={<CarDetail />} />
+          <Route path="/dashboard" element={<Private><Dashboard /></Private>} />
+          <Route path="/dashboard/new" element={<Private><NewCar /></Private>} />
         </Route>
           
         <Route path="/login" element={<Login />} />
