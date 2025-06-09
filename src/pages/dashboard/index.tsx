@@ -1,10 +1,12 @@
 
+import { Container } from '../../components/container';
+import { PainelHeader } from '../../components/painelheader';
 
 export function Dashboard() {
   return (
-    <div>
-        <h1>Dashboard</h1>
-    </div>
+    <Container>
+      <PainelHeader></PainelHeader>
+    </Container>
   );
 }
 

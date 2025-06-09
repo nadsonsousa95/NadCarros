@@ -1,0 +1,28 @@
+
+
+.header{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.header button{
+    width: 15%;
+}
+
+.links{
+    justify-content:baseline;
+}
+
+.link{
+    margin: 0 8px;
+    color: #f1830e;
+}
+
+.link:hover{
+    color:  #c86a06;
+}
