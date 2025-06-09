@@ -16,7 +16,9 @@ interface IuserProps{
 
 type AuthContextData = {
     signed: boolean,
-    loadingAuth: boolean
+    loadingAuth: boolean,
+    handleInfoUser: ({uid, name, email}:IuserProps) => void,
+    user: IuserProps | null
 }
 
 export const AuthContext = createContext({} as AuthContextData)
@@ -51,11 +53,21 @@ function AuthProvider({children}: IAuthProviderProps){
     }, [])
 
 
+    function handleInfoUser({uid, name, email}: IuserProps){
+        setUser({
+            uid,
+            name,
+            email
+    })
+    }
+
     return(
         <AuthContext.Provider 
         value={{ 
             signed : !!user,
-            loadingAuth
+            loadingAuth,
+            handleInfoUser,
+            user
         }}
         >
            {children}

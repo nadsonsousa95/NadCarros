@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import NadCarros from '../../assets/logo/NadCarros.png';
 import './../login/style.css'
 import { Container } from '../../components/container';
@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import { AuthContext } from '../../contexts/AuthContext'
 import { auth } from './../../services/firebaseConnection'
 import { createUserWithEmailAndPassword, updateProfile, signOut } from 'firebase/auth'
 
@@ -22,6 +23,7 @@ const schema = z.object({
 type formData = z.infer<typeof schema>
 
 export function Register() {
+  const {handleInfoUser} = useContext(AuthContext)
   const navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm<formData>({
   resolver: zodResolver(schema),
@@ -41,6 +43,12 @@ export function Register() {
     .then( async ( user )=>{
       await updateProfile(user.user, {
         displayName: data.name
+      })
+
+      handleInfoUser({
+        uid: user.user.uid,
+        name: data.name,
+        email: data.email
       })
 
       console.log('Usuário cadastrado com sucesso!');
