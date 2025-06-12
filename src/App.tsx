@@ -5,10 +5,10 @@ import {Home} from './pages/home'
 import {Login} from './pages/login'
 import {Register} from './pages/register'
 import {Dashboard} from './pages/dashboard'
-import {CarDetail} from './pages/car'
+import {CarDetail} from './pages/Car/Car'
 import { NewCar } from './pages/dashboard/new'
 
-import {Layout} from './components/layout'
+import {Layout} from './components/Layout/Layout'
 import {Private} from './routes/Privates'
 
 

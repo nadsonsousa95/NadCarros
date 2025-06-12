@@ -1,7 +1,7 @@
 
 
 
-button{
+.buttonlogin{
     background-color: #f1830e;
     color: white;
     padding: 6px 16px;
@@ -11,7 +11,7 @@ button{
     transition: box-shadow 0.2s ease-in-out;
 }
 
-button:hover{
+.buttonlogin:hover{
     background-color: #c86a06;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }

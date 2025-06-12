@@ -1,7 +1,7 @@
 import {useContext} from 'react'
 import {AuthContext} from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
-import './style.css'
+import styles from './Header.module.css'
 import { FaUserCircle } from "react-icons/fa";
 import NadCarros from '../../assets/logo/NadCarros.png';
 
@@ -25,11 +25,9 @@ export function Header() {
 
         {!loadingAuth && !signed && (
           <Link to={'/login'}>
-            <button>Entrar</button>
+            <button className={styles.buttonlogin}>Entrar</button>
           </Link>
         )}
-
-      
         
 
       </header>

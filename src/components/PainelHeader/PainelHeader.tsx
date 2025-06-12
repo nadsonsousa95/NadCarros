@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { auth } from "../../services/firebaseConnection";
 import { signOut } from "firebase/auth";
-import './style.css'
+import styles from './PainelHeader.module.css'
 
 export function PainelHeader() {
 
@@ -11,18 +11,18 @@ export function PainelHeader() {
     }
 
   return (
-    <div className="header">
-        <div className="links">
-            <Link to={'/dashboard'} className="link">
+    <div className={styles.header}>
+        <div className={styles.links}>
+            <Link to={'/dashboard'} className={styles.link}>
                 Dashboard
             </Link>
-            <Link to={'/dashboard/new'} className="link">
+            <Link to={'/dashboard/new'} className={styles.link}>
                 Cadastrar novo carro
             </Link>
         </div>
 
 
-        <button onClick={handleLogout}>
+        <button className={styles.button} onClick={handleLogout}>
             Sair da conta
         </button>
     </div>

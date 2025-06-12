@@ -26,3 +26,18 @@
 .link:hover{
     color:  #c86a06;
 }
+
+.button{
+    background-color: #f1830e;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.button:hover{
+    background-color: #c86a06;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}

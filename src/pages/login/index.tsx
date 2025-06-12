@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import NadCarros from '../../assets/logo/NadCarros.png';
-import './style.css'
-import { Container } from '../../components/container';
+import './style.css';
+import { Container } from '../../components/Container/Container';
 import { Link, useNavigate } from 'react-router-dom'
-import { Input } from '../../components/input';
+import { Input } from '../../components/Input/Input';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';

@@ -1,5 +1,5 @@
 
-import './style.css'
+import styles from './Input.module.css'
 import type {RegisterOptions, UseFormRegister} from 'react-hook-form';
 
 interface InputProps{
@@ -14,7 +14,8 @@ interface InputProps{
 export function Input({type, placeholder, name, error, register, rules}: InputProps) {
   return (
     <div>
-      <input 
+      <input
+        className={styles.input} 
         placeholder= {placeholder}
         type={type}
         {...register(name, rules)}

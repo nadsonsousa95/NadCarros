@@ -1,6 +1,6 @@
 
-import { Container } from '../../components/container';
-import { PainelHeader } from '../../components/painelheader';
+import { Container } from '../../components/Container/Container';
+import { PainelHeader } from '../../components/PainelHeader/PainelHeader';
 
 export function Dashboard() {
   return (

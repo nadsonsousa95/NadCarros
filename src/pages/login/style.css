@@ -20,11 +20,6 @@ form{
     padding: 8px;
 }
 
-button{
-    margin-top: 5px;
-    width: 100%;
-}
-
 .input{
     margin: 5px 0;
 }
@@ -38,4 +33,9 @@ p{
 
 strong{
     color:  #f1830e;
+}
+
+button{
+    margin-top: 5px;
+    width: 100%;
 }
