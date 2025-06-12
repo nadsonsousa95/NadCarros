@@ -1,12 +1,12 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
-import {Home} from './pages/home'
-import {Login} from './pages/login'
-import {Register} from './pages/register'
-import {Dashboard} from './pages/dashboard'
+import {Home} from './pages/Home/Home'
+import {Login} from './pages/Login/Login'
+import {Register} from './pages/Register/Register'
+import {Dashboard} from './pages/Dashboard/Dashboard'
 import {CarDetail} from './pages/Car/Car'
-import { NewCar } from './pages/dashboard/new'
+import { NewCar } from './pages/Dashboard/New/New'
 
 import {Layout} from './components/Layout/Layout'
 import {Private} from './routes/Privates'

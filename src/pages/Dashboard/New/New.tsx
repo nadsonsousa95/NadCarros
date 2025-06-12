@@ -1,19 +1,19 @@
 import {Container} from '../../../components/Container/Container'
 import { PainelHeader } from '../../../components/PainelHeader/PainelHeader';
 import { FiUpload} from 'react-icons/fi'
-import './style.css'
+import styles from './style.module.css';
 
 export function NewCar() {
   return (
     <Container>
           <PainelHeader></PainelHeader>
 
-          <div className='img-form'>
-            <button className='button'>
-              <div className='icon'>
+          <div className={styles.imgForm}>
+            <button className={styles.button}>
+              <div className={styles.icon}>
                 <FiUpload size={30} color='black'></FiUpload>
               </div>
-              <div className='input'>
+              <div className={styles.input}>
                 <input 
                 type='file' 
                 accept='image/'
@@ -22,7 +22,7 @@ export function NewCar() {
             </button>
           </div>
 
-          <div className='form'>
+          <div className={styles.form}>
           </div>
       </Container>
   );

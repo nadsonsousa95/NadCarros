@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react'
 import NadCarros from '../../assets/logo/NadCarros.png';
-import './../login/style.css'
+import styles from './../Login/Login.module.css'
 import { Container } from '../../components/Container/Container';
 import { Link, useNavigate } from 'react-router-dom'
 import { Input } from '../../components/Input/Input';
@@ -9,7 +9,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { AuthContext } from '../../contexts/AuthContext'
-import { auth } from './../../services/firebaseConnection'
+import { auth } from '../../services/firebaseConnection'
 import { createUserWithEmailAndPassword, updateProfile, signOut } from 'firebase/auth'
 
 // Validação de formulário
@@ -61,14 +61,14 @@ export function Register() {
 
   return (
     <Container>
-      <div className='main'>
+      <div className={styles.main}>
 
         <Link to='/'>
           <img src={NadCarros} />
         </Link>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-           <div className='input'> 
+           <div className={styles.input}> 
             <Input 
             type='text'
             placeholder='Digite seu nome completo'
@@ -77,7 +77,7 @@ export function Register() {
             register = {register}
             />
           </div>
-          <div className='input'>
+          <div className={styles.input}>
             <Input 
             type='email'
             placeholder='Digite seu email'
@@ -86,7 +86,7 @@ export function Register() {
             register = {register}
             />
           </div>
-         <div className='input'> 
+         <div className={styles.input}> 
             <Input 
             type='password'
             placeholder='Digite a sua nova senha'
@@ -96,9 +96,8 @@ export function Register() {
             />
           </div>
 
-         
 
-          <button type='submit'>Cadastrar</button>
+          <button className={styles.buttondelogin} type='submit'>Cadastrar</button>
         </form>
 
         <Link to='/login' >

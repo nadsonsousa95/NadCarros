@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import NadCarros from '../../assets/logo/NadCarros.png';
-import './style.css';
+import styles from './Login.module.css';
 import { Container } from '../../components/Container/Container';
 import { Link, useNavigate } from 'react-router-dom'
 import { Input } from '../../components/Input/Input';
@@ -51,14 +51,14 @@ export function Login() {
 
   return (
     <Container>
-      <div className='main'>
+      <div className={styles.main}>
 
         <Link to='/'>
           <img src={NadCarros} />
         </Link>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='input'>
+          <div className={styles.input}>
             <Input 
             type='email'
             placeholder='Digite seu email'
@@ -67,7 +67,7 @@ export function Login() {
             register = {register}
             />
           </div>
-         <div className='input'> 
+         <div className={styles.input}> 
             <Input 
             type='password'
             placeholder='Digite sua senha'
@@ -77,7 +77,7 @@ export function Login() {
             />
           </div>
 
-          <button className='buttondelogin' type='submit'>Acessar</button>
+          <button className={styles.buttondelogin} type='submit'>Acessar</button>
         </form>
 
         <Link to='/register' >
