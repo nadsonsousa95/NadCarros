@@ -29,10 +29,12 @@
 
 .button div{
     margin: 8px;
+    cursor: pointer;
 }
 
 .icon{
     position: absolute;
+    cursor: pointer;
 }
 
 .input{

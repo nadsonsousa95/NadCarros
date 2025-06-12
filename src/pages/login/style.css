@@ -35,7 +35,20 @@ strong{
     color:  #f1830e;
 }
 
-button{
+.buttondelogin{
     margin-top: 5px;
     width: 100%;
+    background-color: #f1830e;
+    cursor: pointer;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.buttondelogin:hover{
+    background-color: #c86a06;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }

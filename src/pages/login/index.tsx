@@ -77,7 +77,7 @@ export function Login() {
             />
           </div>
 
-          <button type='submit'>Acessar</button>
+          <button className='buttondelogin' type='submit'>Acessar</button>
         </form>
 
         <Link to='/register' >
