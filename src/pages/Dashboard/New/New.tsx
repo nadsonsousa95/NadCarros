@@ -1,7 +1,7 @@
 import {Container} from '../../../components/Container/Container'
 import { PainelHeader } from '../../../components/PainelHeader/PainelHeader';
 import { FiUpload} from 'react-icons/fi'
-import styles from './style.module.css';
+import styles from './New.module.css';
 
 export function NewCar() {
   return (

@@ -1,5 +1,5 @@
 
-.Search-bar{
+.Searchbar{
     background-color: white;
     justify-content: center;
     display: flex;
@@ -70,25 +70,25 @@ main{
     width: 400px;
 }
 
-.car-name{
+.carname{
     margin: 10px;
     font-weight:700;
 }
 
-.car-info{
+.carinfo{
     margin: 10px;
     display: flex;
     flex-direction: column;
 
 }
 
-.car-info span{
+.carinfo span{
     margin-top: -10px;
     margin-bottom: 5px;
     font-size: 14px;
 }
 
-.car-info strong{
+.carinfo strong{
     margin-top: 12px;
     font-size: 20px;
     font-weight: 500;
@@ -98,11 +98,11 @@ hr{
     color: rgb(228, 228, 228);
 }
 
-.car-local{
+.carlocal{
     margin: 10px;
 }
 
-.car-local span{
+.carlocal span{
     font-size: 14px;
 }
 input [type='submit']{
